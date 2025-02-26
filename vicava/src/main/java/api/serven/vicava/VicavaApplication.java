@@ -1,13 +1,13 @@
-package api.serven;
+package api.serven.vicava;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ServenApplication {
+public class VicavaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ServenApplication.class, args);
+		SpringApplication.run(VicavaApplication.class, args);
 	}
 
 }
