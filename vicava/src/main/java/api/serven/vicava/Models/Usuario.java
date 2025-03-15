@@ -33,7 +33,29 @@ public class Usuario {
     private String pais;
 
     @Column (name="telefono" , nullable=true)
-    private String telefeno;
+    private String telefono;
+
+    @Column (name="imagen_url",nullable= true)
+    private String imagenUrl;
+
+    @Column(name = "estado", nullable = false)
+    private boolean estado = true;
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+    public String getImagenUrl() {
+        return imagenUrl;
+    }
+
+    public void setImagenUrl(String imagenUrl) {
+        this.imagenUrl = imagenUrl;
+    }
 
     public String getPais() {
         return pais;
@@ -43,15 +65,13 @@ public class Usuario {
         this.pais = pais;
     }
 
-    public String getTelefeno() {
-        return telefeno;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setTelefeno(String telefeno) {
-        this.telefeno = telefeno;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
-
-
 
     public boolean isEnabled() {
         return enabled;
@@ -60,9 +80,6 @@ public class Usuario {
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
-
-
-
 
     public Long getId() {
         return id;

@@ -19,6 +19,9 @@ public class UsuarioServiceImpl implements UsuarioService {
         return userRepo.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado") );
     }
-    
-    
+    @Override
+    public Usuario actualizarUsuario(Usuario usuario) {
+        return userRepo.save(usuario);
+    }
+
 }
