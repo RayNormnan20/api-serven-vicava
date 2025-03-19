@@ -5,7 +5,14 @@ import { Card, Button } from "react-bootstrap"; // Importa componentes de Bootst
 import { MdChevronLeft, MdChevronRight } from "react-icons/md"; // Importa íconos para la navegación
 import "../stylesheets/ProductSlider.css"; // Importa los estilos CSS para el slider de productos
 
+// Importa el hook useNavigate desde react-router-dom para manejar la navegación entre rutas.
+import { useNavigate } from "react-router-dom"; 
+
 const ProductSlider = () => {
+  
+  // useNavigate es un hook que permite redirigir a diferentes rutas dentro de la aplicación.
+  const navigate = useNavigate();
+  
   // Estado para almacenar la lista de productos
   const [products, setProducts] = useState([]);
 
@@ -71,7 +78,8 @@ const ProductSlider = () => {
                     }).format(product.precio)}
                   </Card.Text>
                   {/* Precio del producto */}
-                  <Button variant="primary">Ver Producto</Button>{" "}
+                  {/*  Redirige al detalle del producto */}
+                  <Button variant="primary" onClick={()=> navigate(`/producto/${product.id}`)}>Ver Producto</Button>{" "}
                   {/* Botón para ver más detalles */}
                 </Card.Body>
               </Card>
